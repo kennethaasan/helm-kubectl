@@ -1,0 +1,21 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  publish-docker:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: kennethaasan/helm-kubectl
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          tag_names: true
+          dockerfile: Dockerfile
