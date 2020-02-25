@@ -1,5 +1,3 @@
 # helm-kubectl
 
-## Overview
-
-This is a copy of https://github.com/dtzar/helm-kubectl with helm 3
+This repo is deprecated. Please use https://github.com/dtzar/helm-kubectl instead
